@@ -1,0 +1,115 @@
+# set your user tokens as environment variables, such as ~/.secrets
+# See the README for examples.
+[advice]
+  statusHints = false
+
+[alias]
+  # add
+  a = add                           # add
+  chunkyadd = add --patch           # stage commits chunk by chunk
+
+  #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+  recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
+  remove-merged = !git branch --merged master | grep -v '^[ *]*master$' | xargs git branch -d
+
+  co = checkout                     # checkout
+  nb = checkout -b                  # create and switch to a new branch (mnemonic: "git new branch branchname...")
+
+  yank = pull --rebase --autostash
+
+  push-force = push --force-with-lease
+
+  unstage = reset HEAD              # remove files from index (tracking)
+  uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
+  untrack = rm --cache --           # Remove file(s) from Git but not from disk
+
+  filelog = log -u                  # show changes to a file
+  mt = mergetool                    # fire up the merge tool
+
+[apply]
+  whitespace = nowarn
+
+[branch]
+  autosetupmerge = true
+
+[color]
+  ui = true
+
+[commit]
+  gpgsign = true
+
+[core]
+  autocrlf = false
+  excludesfile = ~/.gitignore
+  editor = code --wait
+  # Don't consider trailing space change as a cause for merge conflicts
+  whitespace = -trailing-space
+
+[credential]
+  helper = osxkeychain
+
+[diff]
+  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
+  # instead of a/b/c/d as prefixes for patches
+  mnemonicprefix = true
+  algorithm = patience
+  renames = true
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[format]
+  pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+
+[init]
+	defaultBranch = main
+
+[log]
+  # Use abbrev SHAs whenever possible/relevant instead of full 40 chars
+  abbrevCommit = true
+
+[merge]
+  summary = true
+  verbosity = 1
+  tool = mvimdiff
+
+[mergetool]
+  # Clean up backup files created by merge tools on tool exit
+  keepBackup = false
+  # Clean up temp files created by merge tools on tool exit
+  keepTemporaries = false
+  # Put the temp files in a dedicated dir anyway
+  writeToTemp = true
+  # Auto-accept file prompts when launching merge tools
+  prompt = false
+
+[push]
+  # 'git push' will push the current branch to its tracking branch
+  # the usual default is to push all branches
+  default = upstream
+  # When pushing, also push tags whose commit-ishs are now reachable upstream
+  followTags = true
+
+[rerere]
+  # Remember my merges
+  # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
+  enabled = true
+  autoupdate = true
+
+[tag]
+  # Sort tags as version numbers whenever applicable, so 1.10.2 is AFTER 1.2.0.
+  sort = version:refname
+
+[user]
+  name = Brandon Aaron
+  email = hello.brandon@aaron.sh
+  signingkey = {{.git_signingkey}}
+
+[versionsort]
+  prereleaseSuffix = -pre
+  prereleaseSuffix = .pre
+  prereleaseSuffix = -beta
+  prereleaseSuffix = .beta
+  prereleaseSuffix = -rc
+  prereleaseSuffix = .rc

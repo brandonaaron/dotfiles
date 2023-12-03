@@ -1,0 +1,1 @@
+alias '??'='source /opt/homebrew/opt/clipea/clipea.zsh'

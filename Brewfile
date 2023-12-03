@@ -13,6 +13,7 @@ brew "cocoapods"
 brew "gh"
 brew "git"
 brew "gnupg"
+brew "fnm"
 brew "libpq", link: true
 brew "pinentry-mac"
 brew "pyenv"

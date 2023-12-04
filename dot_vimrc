@@ -42,25 +42,5 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
-endif
-
 " ================ Custom Settings ====================
-" so ~/.dotfiles/vim/settings.vim
-
-" ================ Theme Settings ====================
-if has("gui_running")
-  set guioptions-=r " remove scrollbars
-  set guioptions-=L " remove scrollbar
-  let g:solarized_menu=0
-  set guifont=Inconsolata\ XL:h12
-endif
-set background=dark
-let g:solarized_termcolors = 256
-let g:solarized_visibility = "normal"
-let g:solarized_contrast = "normal"
-" colorscheme solarized
+so ~/.vim/settings.vim

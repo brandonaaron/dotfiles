@@ -1,0 +1,1 @@
+I used the Monaspace/(monaspice) nerd font: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Monaspace.zip

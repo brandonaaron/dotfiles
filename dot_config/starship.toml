@@ -61,6 +61,7 @@ format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'
+stashed = ''
 
 [golang]
 format = '\[[$symbol($version)]($style)\]'

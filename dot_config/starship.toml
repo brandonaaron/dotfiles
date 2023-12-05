@@ -127,7 +127,8 @@ format = '\[[$symbol$cloud(\($project\))]($style)\]'
 format = '\[[$symbol]($style)\]'
 
 [package]
-format = '\[[$symbol$version]($style)\]'
+# format = '\[[$symbol$version]($style)\]'
+disabled = true
 
 [perl]
 format = '\[[$symbol($version)]($style)\]'

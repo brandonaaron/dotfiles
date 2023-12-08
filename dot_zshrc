@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="chezmoi edit ~/.zshrc"
+# alias ohmyzsh="chezmoi edit ~/.oh-my-zsh"
 
 # for config_file ($HOME/.zsh/*.zsh) source $config_file

@@ -1,0 +1,13 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/usr/bin/env bash
+
+# Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+
+# fnm
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.local/bin" --skip-shell
+
+# starship
+curl -sS https://starship.rs/install.sh | sh -s -- --yes
+
+{{ end -}}

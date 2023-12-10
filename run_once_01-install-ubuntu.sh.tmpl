@@ -21,19 +21,10 @@ apt-get install \
   -y -q
 
 # Default to zsh
-sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
-
-# Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-
-# fnm
-curl -fsSL https://fnm.vercel.app/install | bash
-
-# starship
-curl -sS https://starship.rs/install.sh | sh -s -- --yes
+chsh "$(id -un)" --shell "/usr/bin/zsh"
 
 # neovim
-sudo apt-get install ninja-build gettext cmake unzip curl -y -q
+apt-get install ninja-build gettext cmake unzip curl -y -q
 git clone --depth 1 --branch v0.9.4 https://github.com/neovim/neovim.git
 cd neovim
 git checkout v0.9.4

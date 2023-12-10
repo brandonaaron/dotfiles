@@ -2,6 +2,7 @@
 assets
 install.sh
 README.md
-run_once_01-install-ubuntu.sh.tmpl
-Brewfile
+01-install-ubuntu.sh
+01-install-mac.sh
+02-mac-prefs.sh
 test.sh

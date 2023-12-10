@@ -4,3 +4,4 @@ install.sh
 README.md
 run_once_01-install-ubuntu.sh.tmpl
 Brewfile
+test.sh

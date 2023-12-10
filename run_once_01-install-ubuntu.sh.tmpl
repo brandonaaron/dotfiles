@@ -7,17 +7,19 @@
 
 # Run this as sudo!
 if [ $EUID != 0 ]; then
-    sudo "$0" "$@"
-    exit $?
+	sudo "$0" "$@"
+	exit $?
 fi
 
 apt-get update
 
 apt-get install \
-    build-essential \
-    curl \
-    zsh
+	build-essential \
+	curl \
+	zsh \
+	-y -q
 
 sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
 
 {{ end -}}
+

@@ -36,8 +36,10 @@
 [color]
   ui = true
 
+{{ if eq .chezmoi.os "darwin" -}}
 [commit]
   gpgsign = true
+{{- end }}
 
 [core]
   autocrlf = false
@@ -46,8 +48,10 @@
   # Don't consider trailing space change as a cause for merge conflicts
   whitespace = -trailing-space
 
+{{ if eq .chezmoi.os "darwin" -}}
 [credential]
   helper = osxkeychain
+{{- end }}
 
 [diff]
   # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
@@ -104,7 +108,9 @@
 [user]
   name = Brandon Aaron
   email = hello.brandon@aaron.sh
+  {{ if eq .chezmoi.os "darwin" -}}
   signingkey = {{.git_signingkey}}
+  {{end}}
 
 [versionsort]
   prereleaseSuffix = -pre

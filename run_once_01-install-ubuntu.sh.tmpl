@@ -1,0 +1,23 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/usr/bin/env bash
+
+##
+# Original from https://github.com/mkasberg/dotfiles/blob/00e4585c225f82b3f72ef023c1272e52193c3e9a/run_once_01-install-ubuntu-applications.sh.tmpl
+##
+
+# Run this as sudo!
+if [ $EUID != 0 ]; then
+    sudo "$0" "$@"
+    exit $?
+fi
+
+apt-get update
+
+apt-get install \
+    build-essential \
+    curl \
+    zsh
+
+sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
+
+{{ end -}}

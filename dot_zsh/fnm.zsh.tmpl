@@ -1,0 +1,4 @@
+{{- if eq .chezmoi.os "linux" -}}
+  export PATH="$PATH:$HOME/.local/bin"
+{{ end -}}
+eval "$(fnm env --use-on-cd)"

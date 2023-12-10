@@ -1,6 +1,0 @@
-[submodule "dot_vim/pack/vendor/start/nerdtree"]
-	path = dot_vim/pack/vendor/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
-[submodule "dot_vim/pack/vendor/start/vim-airline"]
-	path = dot_vim/pack/vendor/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline

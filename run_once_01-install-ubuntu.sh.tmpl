@@ -32,4 +32,11 @@ curl -fsSL https://fnm.vercel.app/install | bash
 # starship
 curl -sS https://starship.rs/install.sh | sh -s -- --yes
 
+# Nerd Fonts
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLO 'https://github.com/ryanoasis/nerd-fonts/blob/v3.1.1/patched-fonts/UbuntuMono/Regular/UbuntuMonoNerdFontMono-Regular.ttf?raw=true'
+cd ~/.local/share/fonts && curl -fLO 'https://github.com/ryanoasis/nerd-fonts/blob/v3.1.1/patched-fonts/UbuntuMono/Bold/UbuntuMonoNerdFontMono-Bold.ttf?raw=true'
+cd ~/.local/share/fonts && curl -fLO 'https://github.com/ryanoasis/nerd-fonts/blob/v3.1.1/patched-fonts/UbuntuMono/Regular-Italic/UbuntuMonoNerdFontMono-Italic.ttf?raw=true'
+cd ~/.local/share/fonts && curl -fLO 'https://github.com/ryanoasis/nerd-fonts/blob/v3.1.1/patched-fonts/UbuntuMono/Bold-Italic/UbuntuMonoNerdFontMono-BoldItalic.ttf?raw=true'
+
 {{ end -}}

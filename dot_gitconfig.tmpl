@@ -47,6 +47,8 @@
   editor = nvim
   # Don't consider trailing space change as a cause for merge conflicts
   whitespace = -trailing-space
+  # https://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
+  trustctime = false
 
 {{ if eq .chezmoi.os "darwin" -}}
 [credential]

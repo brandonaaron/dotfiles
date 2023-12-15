@@ -415,5 +415,8 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 # Don’t display the annoying prompt when quitting iTerm
 #defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
+# disable the find cursor keyboard shortcut (command-slash)
+defaults write com.googlecode.iterm2 NSUserKeyEquivalents -dict-add "Find Cursor" nil
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 {{ end -}}

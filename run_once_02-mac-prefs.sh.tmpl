@@ -418,5 +418,9 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 # disable the find cursor keyboard shortcut (command-slash)
 defaults write com.googlecode.iterm2 NSUserKeyEquivalents -dict-add "Find Cursor" nil
 
+# store and read iterm2 prefs from a folder
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.config/iterm2/settings"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 {{ end -}}

@@ -1,5 +1,0 @@
-Using JetBrains Mono:
-* Installed via hombrew (check Brewfile)
-* Source Font: https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
-* Nerd Font: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
-* VS Code Ligature Settings: `"editor.fontLigatures": "'ss19', 'zero'",`

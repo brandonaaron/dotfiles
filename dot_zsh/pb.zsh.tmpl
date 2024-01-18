@@ -1,0 +1,3 @@
+{{- if eq .chezmoi.os "darwin" -}}
+export PB_BULLMQ_PRO_TOKEN={{.pb_bullmq_pro_token|quote}}
+{{- end -}}

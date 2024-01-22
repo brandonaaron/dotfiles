@@ -108,8 +108,8 @@
   sort = version:refname
 
 [user]
-  name = Brandon Aaron
-  email = hello.brandon@aaron.sh
+  name = {{.git_name}}
+  email = {{.git_email}}
   {{ if eq .chezmoi.os "darwin" -}}
   signingkey = {{.git_signingkey}}
   {{end}}

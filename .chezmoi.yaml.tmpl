@@ -1,0 +1,41 @@
+{{- $interactive := stdinIsATTY -}}
+
+{{- $name := "Your Name" -}}
+{{- if hasKey . "name" -}}
+{{-   $name = .name -}}
+{{- else if $interactive -}}
+{{-   $name = promptString "name" $name -}}
+{{- end -}}
+
+{{- $email := "your@email.com" -}}
+{{- if hasKey . "email" -}}
+{{-   $email = .email -}}
+{{- else if $interactive -}}
+{{-   $email = promptString "email" $email -}}
+{{- end -}}
+
+{{- $atuin_sync_address := "https://api.atuin.sh" -}}
+{{- if hasKey . "atuin_sync_address" -}}
+{{-   $atuin_sync_address = .atuin_sync_address -}}
+{{- else if $interactive -}}
+{{-   $atuin_sync_address = promptString "atuin_sync_address" $atuin_sync_address -}}
+{{- end -}}
+
+{{- $openai_api_key := "sk-notakey" -}}
+{{- if hasKey . "openai_api_key" -}}
+{{-   $openai_api_key = .openai_api_key -}}
+{{- else if $interactive -}}
+{{-   $openai_api_key = promptString "openai_api_key" $openai_api_key -}}
+{{- end -}}
+
+{{- if $interactive -}}
+{{-   writeToStdout "💡 Tip: you can re-enter your name and email with `chezmoi init --data=false`.\n" -}}
+{{- end -}}
+
+sourceDir: "{{ .chezmoi.sourceDir }}"
+
+data:
+  name: "{{ $name }}"
+  email: "{{ $email }}"
+  atuin_sync_address: "{{ $atuin_sync_address }}"
+  openai_api_key: "{{ $openai_api_key }}"

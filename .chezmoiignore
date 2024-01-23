@@ -1,4 +1,5 @@
 .editorconfig
+.github/
 install.sh
 README.md
 test.sh

@@ -10,26 +10,4 @@ curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.local/b
 # starship
 curl -sS https://starship.rs/install.sh | sh -s -- --yes
 
-# atuin
-if ! command -v cargo &> /dev/null
-then
-  echo "cargo not found! Attempting to install rustup"
-
-  if command -v rustup &> /dev/null
-  then
-    echo "rustup was found, but cargo wasn't. Something is up with your install"
-    exit 1
-  fi
-
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-  source "$HOME/.cargo/env"
-
-  echo "rustup installed! Attempting cargo install"
-fi
-
-cargo install atuin
-# bash <(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)
-# waiting on https://github.com/atuinsh/atuin/issues/870
-
-
 {{ end -}}

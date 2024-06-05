@@ -11,8 +11,6 @@ if [ $EUID != 0 ]; then
   exit $?
 fi
 
-add-apt-repository ppa:neovim-ppa/stable
-
 apt-get update
 
 apt-get install \

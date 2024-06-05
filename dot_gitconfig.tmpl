@@ -36,11 +36,6 @@
 [color]
   ui = true
 
-{{ if eq .chezmoi.os "darwin" -}}
-[commit]
-  gpgsign = true
-{{- end }}
-
 [core]
   autocrlf = false
   excludesfile = ~/.gitignore
@@ -49,11 +44,6 @@
   whitespace = -trailing-space
   # https://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
   trustctime = false
-
-{{ if eq .chezmoi.os "darwin" -}}
-[credential]
-  helper = osxkeychain
-{{- end }}
 
 [diff]
   # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
@@ -69,7 +59,7 @@
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [log]
   # Use abbrev SHAs whenever possible/relevant instead of full 40 chars
@@ -108,11 +98,8 @@
   sort = version:refname
 
 [user]
-  name = {{.name}}
-  email = {{.email}}
-  {{ if eq .chezmoi.os "darwin" -}}
-  signingkey = {{.git_signingkey}}
-  {{end}}
+  name = Brandon Aaron
+  email = hello.brandon@aaron.sh
 
 [versionsort]
   prereleaseSuffix = -pre

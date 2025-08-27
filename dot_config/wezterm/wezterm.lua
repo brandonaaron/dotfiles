@@ -6,6 +6,17 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 
+config.keys = {
+  {
+    key = 'k',
+    mods = 'CMD',
+    action = wezterm.action.Multiple {
+      wezterm.action.ClearScrollback 'ScrollbackAndViewport',
+      wezterm.action.SendKey { key = 'L', mods = 'CTRL' },
+    },
+  },
+}
+
 config.exit_behavior = 'CloseOnCleanExit'
 
 config.font = wezterm.font {

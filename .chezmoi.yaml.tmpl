@@ -1,5 +1,19 @@
 {{- $interactive := stdinIsATTY -}}
 
+{{- $name := "Your Name" -}}
+{{- if hasKey . "name" -}}
+{{-   $name = .name -}}
+{{- else if $interactive -}}
+{{-   $name = promptString "name" $name -}}
+{{- end -}}
+
+{{- $email := "your@email.com" -}}
+{{- if hasKey . "email" -}}
+{{-   $email = .email -}}
+{{- else if $interactive -}}
+{{-   $email = promptString "email" $email -}}
+{{- end -}}
+
 {{- $openai_api_key := "sk-notakey" -}}
 {{- if hasKey . "openai_api_key" -}}
 {{-   $openai_api_key = .openai_api_key -}}
@@ -28,6 +42,8 @@
 sourceDir: "{{ .chezmoi.sourceDir }}"
 
 data:
+  name: "{{ $name }}"
+  email: "{{ $email }}"
   openai_api_key: "{{ $openai_api_key }}"
   pb_bullmq_pro_token: "{{$pb_bullmq_pro_token}}"
   pb_github_packages_token: "{{$pb_github_packages_token}}"

@@ -1,2 +1,8 @@
 bindkey -v                                          # Use vi key bindings
-bindkey '^r' history-incremental-search-backward    # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
+
+# History substring search bindings
+bindkey '^[[A' history-substring-search-up          # Up arrow
+bindkey '^[[B' history-substring-search-down        # Down arrow
+bindkey '^r' history-substring-search-up            # Ctrl+R for consistency
+bindkey -M vicmd 'k' history-substring-search-up    # k in vi command mode
+bindkey -M vicmd 'j' history-substring-search-down  # j in vi command mode

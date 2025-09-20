@@ -1,1 +1,1 @@
-alias claude="/Users/brandon/.claude/local/claude"
+alias claude="$HOME/.claude/local/claude"

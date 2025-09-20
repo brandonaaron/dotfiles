@@ -1,24 +1,17 @@
 {{- $interactive := stdinIsATTY -}}
 
+{{- $anthropic_api_key_api_key := "sk-notakey" -}}
+{{- if hasKey . "anthropic_api_key" -}}
+{{-   $anthropic_api_key = .anthropic_api_key -}}
+{{- else if $interactive -}}
+{{-   $anthropic_api_key = promptString "anthropic_api_key" $anthropic_api_key -}}
+{{- end -}}
+
 {{- $openai_api_key := "sk-notakey" -}}
 {{- if hasKey . "openai_api_key" -}}
 {{-   $openai_api_key = .openai_api_key -}}
 {{- else if $interactive -}}
 {{-   $openai_api_key = promptString "openai_api_key" $openai_api_key -}}
-{{- end -}}
-
-{{- $pb_bullmq_pro_token := "not-the-token" -}}
-{{- if hasKey . "pb_bullmq_pro_token" -}}
-{{-   $pb_bullmq_pro_token = .pb_bullmq_pro_token -}}
-{{- else if $interactive -}}
-{{-   $pb_bullmq_pro_token = promptString "pb_bullmq_pro_token" $pb_bullmq_pro_token -}}
-{{- end -}}
-
-{{- $pb_github_packages_token := "not-the-token" -}}
-{{- if hasKey . "pb_github_packages_token" -}}
-{{-   $pb_github_packages_token = .pb_github_packages_token -}}
-{{- else if $interactive -}}
-{{-   $pb_github_packages_token = promptString "pb_github_packages_token" $pb_github_packages_token -}}
 {{- end -}}
 
 {{- if $interactive -}}
@@ -28,6 +21,5 @@
 sourceDir: "{{ .chezmoi.sourceDir }}"
 
 data:
+  anthropic_api_key: "{{ $anthropic_api_key }}"
   openai_api_key: "{{ $openai_api_key }}"
-  pb_bullmq_pro_token: "{{$pb_bullmq_pro_token}}"
-  pb_github_packages_token: "{{$pb_github_packages_token}}"

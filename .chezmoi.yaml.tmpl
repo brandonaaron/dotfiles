@@ -1,6 +1,6 @@
 {{- $interactive := stdinIsATTY -}}
 
-{{- $anthropic_api_key_api_key := "sk-notakey" -}}
+{{- $anthropic_api_key := "sk-notakey" -}}
 {{- if hasKey . "anthropic_api_key" -}}
 {{-   $anthropic_api_key = .anthropic_api_key -}}
 {{- else if $interactive -}}

@@ -26,9 +26,9 @@ apt-get install \
 chsh "$(id -un)" --shell "/usr/bin/zsh"
 
 # Install Homebrew on Linux (as the user, not root)
-sudo -u "$(id -run)" NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install packages from Brewfile using the user account
-sudo -u "$(id -run)" /home/linuxbrew/.linuxbrew/bin/brew bundle install --file "{{ .chezmoi.sourceDir }}/Brewfile"
+/home/linuxbrew/.linuxbrew/bin/brew bundle install --file "{{ .chezmoi.sourceDir }}/Brewfile"
 
 {{ end -}}

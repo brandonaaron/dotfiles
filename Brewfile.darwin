@@ -1,0 +1,8 @@
+tap "peterldowns/tap"
+brew "asimov"
+brew "peterldowns/tap/localias"
+cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
+cask "keycastr"
+cask "ngrok"
+cask "wezterm"

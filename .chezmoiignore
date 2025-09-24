@@ -3,3 +3,4 @@
 install.sh
 README.md
 test.sh
+.config/nvim/lazy-lock.json
